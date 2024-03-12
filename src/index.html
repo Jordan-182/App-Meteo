@@ -5,6 +5,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Météo</title>
     <link rel="stylesheet" href="/src/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
 </head>
-<body></body>
+
+<body class="flex flex-col pt-8 bg-gradient-to-r from-sky-500 via-cyan-500 to-sky-500">
+    
+    <div class="bg-black opacity-50 h-60 w-72 mt-8 mx-auto rounded-lg flex flex-col">
+        <div class="mx-auto my-auto flex flex-col text-white">
+            <p class="font-bold text-8xl">15°</p>
+            <p class= "text-5xl mx-auto mt-2">Croix</p>
+        </div>
+    </div>
+
+    <div class="w-72 h-auto flex flex-col mx-auto mt-6">
+        <div class="bg-white w-72 h-14 mb-2 mx-auto rounded-lg flex flex-row">
+            <p>Humidité :</p>
+        </div>
+        <div class="bg-white w-72 h-14 mb-2 mx-auto rounded-lg flex flex-row">
+            <p>Vent :</p>
+        </div>
+        <div class="bg-white w-72 h-14 mb-2 mx-auto rounded-lg flex flex-row">
+            <p>Humidité :</p>
+        </div>
+        <div class="bg-white w-72 h-14 mb-2 mx-auto rounded-lg flex flex-row">
+            <p>Humidité :</p>
+        </div>
+    </div>
+
+    <div class="mx-auto mt-8">
+        <form class="flex flex-col">
+            <input type="text" class="w-72 h-7 rounded-lg mb-2 placeholder:text-center" id="inputCity" placeholder="Indiquez votre ville">
+            <button type="submit" class="bg-blue-950 h-7 rounded-lg text-white cursor-pointer hover:bg-blue-800">Rechercher</button>
+        </form>
+    </div>
+
+</body>
 </html>
