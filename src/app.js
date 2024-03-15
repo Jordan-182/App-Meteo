@@ -8,11 +8,11 @@ let apiCall = function(city){
 
     fetch(url).then((response) =>
     response.json().then((data) => {
-    document.querySelector('#city').innerHTML = "<i class='fa-solid fa-location-dot'></i>" + data.name;
     document.querySelector('#temp').innerHTML =  data.main.temp + '°';
+    document.querySelector('#city').innerHTML = "<i class='fa-solid fa-location-dot'></i>" + data.name;
+    document.querySelector('#description').innerHTML = data.weather[0].description;
     document.querySelector('#humidity').innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + '%';
-    document.querySelector('#wind').innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + 'km-h';
-    document.querySelector('#description').innerHTML = "Ressenti : " + data.main.feels_like + "°";
+    document.querySelector('#wind').innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + 'km/h';
     document.querySelector('#pressure').innerHTML = data.main.pressure + " hPa";
     })
     ).catch(err => console.log('Erreur : ' + err));
@@ -26,4 +26,4 @@ document.querySelector('form').addEventListener('submit', function(e){
 });
 
 // Appel par défaut au chargement de la page
-apiCall('Lens');
+apiCall('Croix');
