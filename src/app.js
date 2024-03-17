@@ -10,10 +10,10 @@ let apiCall = function(city){
     .then((response) => response.json())
     .then((data) => {
         document.querySelector('#temp').innerHTML =  data.main.temp + '°';
-        document.querySelector('#city').innerHTML = "<i class='fa-solid fa-location-dot'></i>" + data.name;
+        document.querySelector('#city').innerHTML = "<i class='fa-solid fa-location-dot'></i> " + data.name;
         document.querySelector('#description').innerHTML = data.weather[0].description;
-        document.querySelector('#humidity').innerHTML = "<i class='fa-solid fa-droplet'></i>" + data.main.humidity + '%';
-        document.querySelector('#wind').innerHTML = "<i class='fa-solid fa-wind'></i>" + data.wind.speed + 'km/h';
+        document.querySelector('#humidity').innerHTML = "<i class='fa-solid fa-droplet'></i> " + data.main.humidity + '%';
+        document.querySelector('#wind').innerHTML = "<i class='fa-solid fa-wind'></i> " + data.wind.speed + 'km/h';
         document.querySelector('#pressure').innerHTML = data.main.pressure + " hPa";
         
         // Appel de la fonction background une fois que les données sont récupérées
