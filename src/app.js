@@ -34,7 +34,7 @@ document.querySelector('form').addEventListener('submit', function(e){
 function background(){
     let descriptionText = document.querySelector("#description").textContent.trim();
     console.log("Description récupérée :", descriptionText);
-    if(descriptionText === "couvert" || descriptionText ==="nuageux" || descriptionText ==="orage" || descriptionText ==="bruine" || descriptionText ==="légère pluie"){
+    if(descriptionText === "couvert" || descriptionText ==="nuageux" || descriptionText ==="orage" || descriptionText ==="bruine" || descriptionText ==="légère pluie" || descriptionText ==="bruine légère"){
         document.querySelector('body').classList.remove('bg-gradient-to-r', 'from-white', 'via-cyan-100', 'to-white');
         document.querySelector('body').classList.remove('bg-gradient-to-r', 'from-blue-400', 'via-sky-500', 'to-blue-400');
         document.querySelector('body').classList.remove('bg-gradient-to-r', 'from-sky-400', 'via-stone-300', 'to-sky-500');
