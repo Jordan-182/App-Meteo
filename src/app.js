@@ -61,4 +61,32 @@ function background(){
 }
 
 // Appel par défaut au chargement de la page
-apiCall('Croix');
+apiCall('Paris');
+
+// Fonction pour obtenir la position de l'utilisateur
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else {
+        console.log("La géolocalisation n'est pas prise en charge par ce navigateur.");
+    }
+}
+
+// Fonction de rappel pour traiter la position de l'utilisateur
+function showPosition(position) {
+    const latitude = position.coords.latitude;
+    const longitude = position.coords.longitude;
+
+    // Utiliser les coordonnées pour obtenir la ville correspondante
+    fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${APIKEY}&units=metric&lang=fr`)
+        .then(response => response.json())
+        .then(data => {
+            const cityName = data.name;
+            // Utiliser la ville pour effectuer une recherche météorologique par défaut
+            apiCall(cityName);
+        })
+        .catch(err => console.error('Erreur lors de la récupération de la ville:', err));
+}
+
+// Appel de la fonction pour obtenir la position de l'utilisateur au chargement de la page
+getLocation();
